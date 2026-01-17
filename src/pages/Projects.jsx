@@ -15,7 +15,7 @@ const projects = [
     source: "https://github.com/amisha-cloud/Bombay_Dyeing_Chatbot.git",
     images: [chatbotImg, chatImg],
     description:
-      "An AI-powered internal chatbot enabling employees to quickly access organizational knowledge through a secure and intuitive interface."
+      "An AI-powered internal chatbot enabling employees to quickly access organizational knowledge through a secure and intuitive interface.",
   },
   {
     title: "HonestGig",
@@ -25,46 +25,42 @@ const projects = [
     source: "https://github.com/amisha-cloud/Honestgig.git",
     images: [honestGigImg, honestGigPreview],
     description:
-      "A decentralized gig marketplace enabling trustless hiring and blockchain-based payments using smart contracts."
-  }
+      "A decentralized gig marketplace enabling trustless hiring and blockchain-based payments using smart contracts.",
+  },
 ];
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0 }
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
 };
 
 const Projects = () => {
   return (
     <section
       id="projects"
-      className="relative bg-gradient-to-br from-[#0f1c2e] via-[#162740] to-[#0a101c]
-                 py-24 min-h-screen overflow-hidden"
+      className="relative min-h-screen py-28 overflow-hidden
+                 bg-gradient-to-br from-[#0a1222] via-[#0f1c33] to-[#090f1c]"
     >
-      {/* Soft glow */}
-      <div className="absolute inset-0 -z-10 bg-gradient-radial
-                      from-[#00FFC2]/20 via-transparent to-transparent opacity-30" />
+      <div className="absolute inset-0 -z-10 bg-gradient-radial from-[#00FFC2]/25 via-transparent to-transparent opacity-40" />
 
-      {/* Header */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-        className="max-w-6xl mx-auto px-6 mb-20"
+        transition={{ duration: 0.7 }}
+        className="max-w-7xl mx-auto px-6 mb-20 text-center md:text-left"
       >
-        <h2 className="text-4xl md:text-5xl font-semibold text-white">
-          Projects
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+          Selected <span className="text-[#00FFC2]">Projects</span>
         </h2>
-        <p className="mt-4 text-white/65 max-w-xl">
-          A curated selection of projects demonstrating real-world problem solving,
-          scalability, and clean system design.
+        <p className="mt-5 text-white/75 max-w-2xl mx-auto md:mx-0 text-lg">
+          A selection of projects showcasing system design, scalability, and
+          real-world problem solving.
         </p>
       </motion.div>
 
-      {/* Grid */}
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-14">
         {projects.map((project, index) => (
           <motion.div
             key={index}
@@ -72,17 +68,16 @@ const Projects = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.15 }}
-            whileHover={{ y: -6 }}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            whileHover={{ y: -8 }}
             className="group rounded-3xl overflow-hidden
-                       bg-white/5 backdrop-blur-xl
-                       border border-white/10
-                       hover:border-[#00FFC2]/40
+                       bg-[#0f1c2e]/80 backdrop-blur-xl
+                       border border-white/15
+                       hover:border-[#00FFC2]/50
+                       hover:shadow-2xl hover:shadow-[#00FFC2]/20
                        transition-all duration-300"
           >
-            {/* Image */}
-            <div className="relative h-56 overflow-hidden">
-              {/* Base image */}
+            <div className="relative h-60 overflow-hidden">
               <img
                 src={project.images[0]}
                 alt={project.title}
@@ -91,7 +86,6 @@ const Projects = () => {
                            transition-transform duration-700"
               />
 
-              {/* Hover image */}
               {project.images[1] && (
                 <img
                   src={project.images[1]}
@@ -102,50 +96,49 @@ const Projects = () => {
                 />
               )}
 
-              {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t
-                              from-[#050b18]/90 via-[#050b18]/30 to-transparent" />
+                              from-[#050b18]/95 via-[#050b18]/40 to-transparent" />
             </div>
 
-            {/* Content */}
             <div className="p-8">
-              <h3 className="text-xl font-medium text-[#00FFC2]">
+              <h3 className="text-xl font-semibold text-[#00FFC2]">
                 {project.title}
               </h3>
 
-              <p className="text-sm text-white/55 mt-1">
+              <p className="text-sm text-white/60 mt-1">
                 {project.tag}
               </p>
 
-              <p className="text-sm text-white/70 mt-4 leading-relaxed">
+              <p className="text-sm text-white/80 mt-4 leading-relaxed">
                 {project.description}
               </p>
 
-              <span className="block text-xs text-[#00FFC2] mt-5">
+              <span className="block text-xs tracking-wide text-[#00FFC2] mt-6">
                 {project.tech}
               </span>
 
-              {/* Buttons */}
-              <div className="mt-6 flex gap-4">
+              <div className="mt-7 flex gap-4">
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl text-sm font-medium
-                             bg-[#00FFC2] text-black
-                             hover:bg-[#1FFFD5] transition"
+                  className="px-5 py-2.5 rounded-xl text-sm font-semibold
+                             bg-gradient-to-r from-[#00FFC2] to-[#00D4FF]
+                             text-black shadow-lg shadow-[#00FFC2]/30
+                             hover:shadow-[#00FFC2]/50 transition-all"
                 >
-                  Live →
+                  Live Demo →
                 </a>
 
                 <a
                   href={project.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl text-sm font-medium text-white
-                             border border-white/30
-                             hover:border-[#00FFC2] hover:text-[#00FFC2]
-                             transition"
+                  className="px-5 py-2.5 rounded-xl text-sm font-medium
+                             text-white border border-white/30
+                             hover:border-[#00FFC2]
+                             hover:text-[#00FFC2]
+                             transition-all"
                 >
                   Source Code
                 </a>

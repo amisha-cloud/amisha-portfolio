@@ -19,12 +19,12 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen w-full bg-gradient-to-br from-[#0f1c2e] via-[#162740] to-[#0a101c] flex items-center overflow-hidden">
-      <div className="absolute inset-0 -z-20 bg-gradient-radial from-[#00FFC2]/20 via-transparent to-transparent opacity-30" />
+      <div className="absolute inset-0 -z-10 bg-gradient-radial from-[#00FFC2]/20 via-transparent to-transparent opacity-30" />
 
       {init && (
         <Particles
           id="tsparticles"
-          className="absolute inset-0 -z-0"
+          className="absolute inset-0 z-0 pointer-events-none"
           options={{
             fpsLimit: 80,
             interactivity: {
@@ -45,7 +45,7 @@ const Hero = () => {
         />
       )}
 
-      <div className="max-w-7xl mx-auto px-6 pt-32 grid grid-cols-1 md:grid-cols-2 gap-20 items-center w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 grid grid-cols-1 md:grid-cols-2 gap-20 items-center w-full">
         <motion.div
           initial={{ x: -120, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -53,13 +53,13 @@ const Hero = () => {
           className="space-y-6 text-center md:text-left"
         >
           <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-            Turning <span className="text-[#00FFC2]">Data</span> into <br />
-            <span className="text-[#FFD700]">Insights</span>
+            Turning <span className="text-[#00FFC2]">Ideas</span> into <br />
+            <span className="text-[#FFD700]">Scalable Software</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 leading-relaxed relative z-10">
           <Typewriter
-          words={["Python Developer", "Data Analyst", "Aspiring Data Scientist"]}
+          words={["Aspiring Software Engineer", "Java Developer", "Full-Stack Developer", "Problem Solver"]}
           loop={0}
           cursor = {false}
           typeSpeed={70}
@@ -75,7 +75,7 @@ const Hero = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
     >
-      I aim build meaningful technology that helps people solve real problems. My goal is to use technology thoughtfully, turning ideas into tools that bring value to users and contribute positively to society.
+      I aim to build meaningful technology that helps people solve real problems. My goal is to use technology thoughtfully, turning ideas into reliable tools that create real value and contribute positively to society.
     </motion.p>
 
           <div className="flex gap-4 justify-center md:justify-start pt-4">
@@ -97,16 +97,27 @@ const Hero = () => {
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="inline-block mt-6 px-5 py-3 rounded-xl bg-white/5 border border-white/10 backdrop-blur"
-          >
-            <p className="text-sm text-gray-300 hover:text-[#00FFC2] transition">
-              Turning curiosity into clarity, and effort into impact
+            transition={{ delay: 0.6, duration: 0.6, ease: "easeOut" }}
+            whileHover={{ y: -2, scale: 1.02 }}
+            className="inline-block mt-8 px-6 py-3.5 rounded-2xl
+             bg-gradient-to-r from-white/5 to-white/10
+             border border-white/20
+             backdrop-blur-xl
+             shadow-lg shadow-black/20
+             hover:border-[#00FFC2]/50
+             transition-all duration-300"
+>
+            <p className="text-sm md:text-base font-medium
+               text-white/80
+               hover:text-[#00FFC2]
+               transition-colors duration-300">
+            Turning curiosity into clarity, and effort into impact
             </p>
-          </motion.div>
+            </motion.div> 
         </motion.div>
+
 
         <motion.div
           initial={{ x: 120, opacity: 0 }}
