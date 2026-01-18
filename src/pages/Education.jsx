@@ -9,7 +9,7 @@ const Education = () => {
       subtitle: "Amity University, Mumbai",
       detail: "Deepened my programming, problem-solving, and project management skills.",
       icon: <FaGraduationCap size={30} className="text-[#FFD700]" />,
-      highlight: "CGPA 9.58",
+      highlight: "CGPA 9.63",
     },
     {
       title: "Bachelor of Science (B.Sc.)",
